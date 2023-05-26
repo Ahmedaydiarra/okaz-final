@@ -1,0 +1,116 @@
+/* Nom des classes à utiliser pour les couleurs des background et des textes (normal, hover et active) */
+
+/* Backgrounds */
+
+.bg-orange {
+    background-color: #FF6B35;
+}
+.bg-blue {
+    background-color: #336FBB;
+}
+.bg-darkblue {
+    background-color: #031926;
+}
+.bg-eggshell {
+    background-color: #F3EFE0;
+}
+.bg-grey {
+    background-color: #F4F3F3;
+}
+.bg-darkgrey {
+    background-color: #525252;
+}
+
+/* Backgrounds-hover */
+
+.hover-bg-orange:hover {
+    background-color: #FF6B35;
+}
+.hover-bg-blue:hover {
+    background-color: #336FBB;
+}
+.hover-bg-darkblue:hover {
+    background-color: #031926;
+}
+.hover-bg-eggshell:hover {
+    background-color: #F3EFE0;
+}
+.hover-bg-grey:hover {
+    background-color: #F4F3F3;
+}
+.hover-bg-darkgrey:hover {
+    background-color: #525252;
+}
+
+/* Texts*/
+
+.text-orange {
+    color: #FF6B35;
+}
+.text-blue {
+    color: #336FBB;
+}
+.text-darkblue {
+    color: #031926;
+}
+.text-eggshell {
+    color: #F3EFE0;
+}
+.text-grey {
+    color: #F4F3F3;
+}
+.text-darkgrey {
+    color: #525252;
+}
+
+/* Texts-Hovers*/
+
+.hover-text-orange:hover {
+    color: #FF6B35;
+}
+.hover-text-blue:hover {
+    color: #336FBB;
+}
+.hover-text-darkblue:hover {
+    color: #031926;
+}
+
+.hover-text-darkgrey:hover {
+    color: #525252;
+}
+
+/* Texts-active*/
+
+.active-text-orange:active {
+    color: #FF6B35;
+}
+.active-text-blue:active {
+    color: #336FBB;
+}
+.active-text-darkblue:active {
+    color: #031926;
+}
+
+.active-text-darkgrey:active {
+    color: #525252;
+}
+
+/* borders */
+.border-orange {
+    border-color: #FF6B35;
+}
+.border-blue {
+    border-color: #336FBB;
+}
+.border-darkblue {
+    border-color: #031926;
+}
+.border-eggshell {
+    border-color: #F3EFE0;
+}
+.border-grey {
+    border-color: #F4F3F3;
+}
+.border-darkgrey {
+    border-color: #525252;
+}

@@ -1,0 +1,19 @@
+/* font family*/
+@font-face {
+    font-family: 'Open Sans' ;
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+}
+
+
+/* ----- body---- */
+
+
+.bg-hero  {
+    background-image: url('../images/banner_hero.jpg'); 
+}
+
+
+
+
+
+
