@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+<section class="bg-grey shadow-slate-400 shadow-md py-14 px-10 sm:py-24 sm:px-20 xl:px-40">
+		<div class="container mx-auto flex flex-col items-center">
+			<h1 class="text-2xl md:text-4xl lg:text-5xl font-semibold text-center text-darkblue uppercase mb-5 sm:mb-10 ">Boutique
+			</h1>
+			<p class="text-center text-black text-base md:text-xl">Ceci est la page Boutique</p>
+		</div>
+	</section>
+	<section class="mb-auto px-8 py-10 lg:p-20">
+		<div class="container mx-auto">
+			<h2 class="text-xl sm:text-2xl font-semibold mb-10 uppercase text-darkblue text-center lg:text-left ">
+				Rechercher un produit</h2>
+			<div class="flex flex-col lg:flex-row space-y-3  lg:space-y-0 lg:space-x-10 justify-center items-center lg:justify-start">
+				<form action="" class="flex flex-col lg:flex-row space-y-2 lg:space-x-6" method="POST">
+					<div class="">
+						<input value="" class="border rounded-lg border-darkgrey py-2 px-4 outline-orange shadow-lg text-sm sm:text-base" placeholder="Rechercher par mot-clé" type="text" name="keyword" id="keyword" required>
+					</div>
+					<input type="submit" name="keyword_form" value="Rechercher" class="font-semibold text-sm sm:text-base uppercase tracking-wider hover-text-orange ">
+				</input>
+			</form>
+			<p class="font-semibold text-xl sm:text-2xl text-orange text-center">OU</p>
+			<form action="" class="" method="POST">
+				<div class="">
+					<select value="" class="text-sm sm:text-base border rounded-lg border-darkgrey py-2 px-4  outline-orange shadow-lg bg-white" name="searchByStore" id="searchByStore" onchange="this.form.submit()" required>
+						<option class="" value="">-- Sélectionner un magasin --</option>
+						<option class="capitalize" value=""></option>
+
+					</select>
+				</div>
+			</form>
+		</div>
+
+		<p class="font-semibold text-center lg:text-left text-xl mt-10 mb-5">Filtrer par prix</p>
+		<form action="" class="flex flex-col lg:flex-row justify-center items-center lg:justify-start space-y-4 lg:space-y-0 lg:space-x-6 lg:mt-6" method="POST">
+			<div class="">
+				<input value="" class="text-sm sm:text-base border rounded-lg border-darkgrey py-2 px-4 outline-orange shadow-lg" placeholder="Prix MIN (en €)" type="text" name="min_price" id="min_price" required>
+			</div>
+			<div class="">
+				<input value="" class="text-sm sm:text-base border rounded-lg border-darkgrey py-2 px-4 outline-orange shadow-lg" placeholder="Prix MAX (en €)" type="text" name="max_price" id="max_price" required>
+			</div>
+			<input type="submit" name="price_form" value="Filtrer" class="font-semibold text-sm sm:text-base uppercase tracking-wider hover-text-orange">
+		</input>
+	</form>
+
+</div>
+<hr class="block mx-auto  border-darkgrey border-t-0 border-b-2 mt-10"/></section><!-- </section> --><!-- Contenu de la page --><section class="p-20">
+<div class="container mx-auto grid gap-y-5">
+	<h2 class="uppercase text-darkblue font-semibold text-3xl text-center">Découvrez nos produits classés par catégories</h2>
+
+	<div class="container mx-auto p-28 grid grid-cols-2 gap-12">
+		{% for categorie in categories %}
+			<div class="flex space-x-10">
+				<img class="h-[100px] min-w-[130px] w-[130px] md:h-[130px] md:min-w-[160px] md:w-[160px] xl:h-[150px] xl:min-w-[200px] xl:w-[200px]" src="{{ categorie.image }}" alt="{{ categorie.nom }}">
+				<div class="flex flex-col space-y-3">
+					<a href="category.php" class="text-lg md:text-xl xl:text-2xl uppercase text-orange font-semibold">{{ categorie.nom }}</a>
+					<hr class="border-darkgrey border-t-0 border-b-2 mb-32"/>
+					<p class="text-sm md:text-base xl:text-lg">{{ categorie.description }}</p>
+				</div>
+			</div>
+		{% endfor %}
+
+
+	</div>
+
+</div>
+</section>
+{% endblock %}

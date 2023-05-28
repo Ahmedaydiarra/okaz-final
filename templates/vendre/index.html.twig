@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vendre{% endblock %}
+
+{% block body %}
+<!-- Contenu de la page -->
+
+
+<section class="mb-auto py-6 lg:py-16 px-2 md:px-3 bg-white">
+    <div class="container mx-auto ">
+        <h2 class="text-center mb-2 md:mb-4 text-2xl md:text-4xl font-bold uppercase text-orange">Comment ça marche ?</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-y-20 gap-10 px-2 lg:px-32 xl:px-52 py-10 md:py-20 content-center">
+            <div class="container mx-auto p-5 w-[300px] h-[150px] sm:w-[450px] md:w-[350px] md:h-[300px] bg-white grid">
+                <i class="fas fa-regular fa-shop text-center text-2xl sm:text-3xl md:fa-3x"></i>
+                <h3 class="text-center  text-orange text-2xl sm:text-3xl md:text-4xl font-bold uppercase">#1</h3>
+                <h4 class="text-center text-lg sm:text-xl md:text-2xl uppercase">rendez-vous en magasin</h4>
+                <p class="text-center text-sm sm:text-lg ">
+                   Rendez vous dans le magasin le plus proche de chez vous avec vos meubles à vendre. 
+                </p>
+            </div>
+            <div class="container mx-auto p-5 w-[300px] h-[150px] sm:w-[450px] md:w-[350px] md:h-[300px] bg-white grid">
+                <i class="fas fa-regular fa-magnifying-glass-dollar text-center text-2xl sm:text-3xl md:fa-3x"></i>
+                <h3 class="text-center  text-orange text-2xl sm:text-3xl md:text-4xl font-bold uppercase">#2</h3>
+                <h4 class="text-center text-lg sm:text-xl md:text-2xl uppercase">estimation du bien</h4>
+                <p class="text-center text-sm sm:text-lg ">
+                   Un expert estime la valeur de vos meubles. 
+                </p>
+            </div>
+            <div class="container mx-auto p-5 w-[300px] h-[200px] sm:w-[450px] md:w-[350px] md:h-[350px] bg-white grid">
+                <i class="fas fa-refular fa-money-bill-1-wave text-center text-2xl sm:text-3xl md:fa-3x"></i>
+                <h3 class="text-center  text-orange text-2xl sm:text-3xl md:text-4xl font-bold uppercase">#3</h3>
+                <h4 class="text-center text-lg sm:text-xl md:text-2xl uppercase">choix du paiement</h4>
+                <p class="text-center text-sm sm:text-lg ">
+                    Deux formules sont proposées: </br>
+                    1. L’achat cash, vous êtes payés immédiatement</br>
+                    2. Le dépôt vente, vous êtes payés quelques jours après la vente  
+                </p>
+            </div>
+            <div class="container mx-auto p-5 w-[300px] h-[200px] md:w-[350px] sm:w-[450px] md:h-[350px] bg-white grid">
+                <i class="fas fa-regular fa-cart-arrow-down text-center text-2xl sm:text-3xl md:fa-3x"></i>
+                <h3 class="text-center  text-2xl text-orange sm:text-3xl md:text-4xl font-bold uppercase">#4</h3>
+                <h4 class="text-center text-lg sm:text-xl md:text-2xl uppercase">Mise en vente</h4>
+                <p class="text-center text-sm sm:text-lg ">
+                   OKAZ s’occupe de tout pour vous. Nos équipes se chargent de l’exposition et de la vente sur notre site et en magasin. 
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="" class="py-7 px-4 sm:py-10 sm:px-16 md:py-14 md:px-20 lg:py-28 lg:px-36 bg-eggshell ">
+    <div class="flex flex-col items-center">
+        <h1 class="text-xl sm:text-2xl md:text-4xl sm:leading-normal md:leading-snug font-semibold uppercase font-sans mb-8 md:mb-14 text-center " id="searchTitle"> Trouvez un magasin Okaz près de chez vous <i id="searchIcon" class="ml-4 fas fa-regular fa-magnifying-glass-location md:text-4xl"></i></h1>
+        <form id="searchStoreForm" action="" method="POST" class="rounded-full w-2/3 border-2 border-orange px-1 py-1 sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-3 bg-white" data-bs-toggle="modal">
+            <select value="" class="select_store bg-white w-full text-sm sm:text-base md:text-lg outline-none" name="select_store" id="select_store" onchange="this.form.submit()">
+                <option value="">-- Sélectionnez un magasin --</option>
+                
+                    <option class="capitalize" value=""</option>
+                
+            </select>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

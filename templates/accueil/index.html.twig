@@ -1,0 +1,162 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+<!-- SECTION BANNIERE -->
+<section class="bg-black bg-opacity-40 bg-blend-darken bg-hero bg-no-repeat bg-cover bg-center bg-fixed py-40 px-80">
+    <div class="container mx-auto flex-col items-center ">
+        <h1 class="text-4xl text-center text-white font-semibold uppercase tracking-wider leading-10 mb-8">OKAZ, ACHAT ET VENTE DE MEUBLES D'OCCASION EN LIGNE ET EN MAGASIN </h1>
+        <div class="flex justify-center gap-5">
+            <div class=" bg-orange hover-bg-darkgrey rounded-full flex py-2 px-8">
+                <a href="{{ path('app_boutique') }}" class="text-white text-lg font-semibold tracking-wider">J'achète</a>
+            </div>
+            <div class=" bg-blue hover-bg-darkgrey rounded-full flex py-2 px-8">
+                <a href="{{ path('app_vendre') }}" class="text-white text-lg font-semibold tracking-wider">Je vends</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FIN SECTION BANNIERE -->
+
+<!-- SECTION NOS DERNIERS MEUBLES -->
+<section class="bg-white shadow-slate-400 shadow-md py-24 px-60">
+    <div class="container mx-auto flex-col items-center ">
+
+        <h1 class="text-4xl text-center text-darkblue font-semibold uppercase mb-14 ">Nos derniers meubles d'occasions</h1>
+
+        <!-- Implement the carousel -->
+        <div class=" flex  justify-between mx-auto items-center">
+
+        <!-- Previous button -->
+            <a onclick="moveSlide(-1)">
+                <div class="rounded-full bg-orange hover-bg-darkgrey py-3 px-5">
+                    <i class="fas fa-regular fa-angle-left fa-2x"></i>
+                </div>
+            </a>
+            <div class="slide w-[700px]">
+                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-1.jpeg">
+                <a href="#">
+                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white">Nom de l'article</div>
+                </a>
+            </div>
+
+            <div class="slide w-[700px]">
+                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-2.jpeg">
+                <a href="#">
+                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
+                </a>
+            </div>
+
+            <div class="slide w-[700px]">
+                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-3.jpeg">
+                <a href="#">
+                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
+                </a>
+            </div>
+
+            <div class="slide w-[700px]">
+                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-1.jpeg">
+                <a href="#">
+                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
+                </a>
+
+            </div>
+            <div class="slide w-[700px]">
+                <img class="w-full h-[400px] object-cover" src="https://www.kindacode.com/wp-content/uploads/2022/07/flower-2.jpeg">
+                <a href="#">
+                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white ">Nom de l'article</div>
+                </a>
+            </div>
+
+            <!-- Next button -->
+            <a onclick="moveSlide(1)">
+                <div class="rounded-full bg-blue hover-bg-darkgrey py-3 px-5">
+                    <i class="fas fa-regular fa-angle-right fa-2x"></i>
+                </div>
+            </a>
+        </div>
+
+        <br>
+
+        <!-- The dots -->
+        <div class="flex justify-center items-center space-x-5">
+            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(1)"></div>
+            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(2)"></div>
+            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(3)"></div>
+            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(4)"></div>
+            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(5)"></div>
+        </div>
+    </div>
+</section>
+
+<!-- FIN SECTION NOS DERNIERS MEUBLES -->
+
+<!-- SECTION QUI SOMMES-NOUS-->
+
+<section id="quiSommeNous" class="py-20 px-36 bg-orange">
+    <div class="container mx-auto text-white flex justify-between">
+        <div class="w-3/4 flex-col px-16">
+            <h1 class="text-4xl text-justify font-bold uppercase  mb-10"> QUI SOMMES-NOUS ? </h1>
+            <p class="text-xl tracking-wider  mb-10">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.
+            </p>
+
+            <div>
+                <a href="#" class="py-3 px-8 rounded-full bg-blue hover-text-darkgrey text-white font-semibold text-lg">
+                <i class="fas fa-regular fa-eye mr-2"></i>En savoir plus
+                </a>
+            </div>
+        </div>
+
+        <div class="w-1/4">
+            <figure class="flex flex-col items-center mt-10">
+                <img src="./images/istockphoto-1194667952-612x612.jpg" alt="pdg_de_okaz" class="rounded-full w-60 mb-4">
+                <figcaption class="text-center font-semibold text-xl tracking-wider ">
+                    Ahmed Diarra </br> PDG de OKAZ
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- FIN SECTION QUI SOMMES-NOUS-->
+ <section id="" class="py-7 px-4 sm:py-10 sm:px-16 md:py-14 md:px-20 lg:py-28 lg:px-36 bg-eggshell ">
+    <div class="flex flex-col items-center">
+        <h1 class="text-xl sm:text-2xl md:text-4xl sm:leading-normal md:leading-snug font-semibold uppercase font-sans mb-8 md:mb-14 text-center " id="searchTitle"> Trouvez un magasin Okaz près de chez vous <i id="searchIcon" class="ml-4 fas fa-regular fa-magnifying-glass-location md:text-4xl"></i></h1>
+        <form id="searchStoreForm" action="" method="POST" class="rounded-full w-2/3 border-2 border-orange px-1 py-1 sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-3 bg-white" data-bs-toggle="modal">
+            <select value="" class="select_store bg-white w-full text-sm sm:text-base md:text-lg outline-none" name="select_store" id="select_store" onchange="this.form.submit()">
+                <option value="">-- Sélectionnez un magasin --</option>
+                
+                    <option class="capitalize" value=""</option>
+                
+            </select>
+        </form>
+    </div>
+</section>
+
+
+    {# <section id="store_searchModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <div class="relative container mx-auto top-28 w-3/4 lg:w-2/3 xl:w-1/2 p-5  md:p-8 xl:p-10 bg-white">
+            <button class="rounded py-0 px-1 md:px-2 bg-blue hover-bg-darkgrey float-right">
+                <i id="closeStore_searchModal" class="fa-solid fa-xmark text-lg lg:text-xl xl:text-2xl"></i>
+            </button>
+            <h3 class="text-orange text-center text-xl md:text-2xl lg:text-3xl font-semibold uppercase mb-6 md:mb-10 lg:mb-12">/h3>
+            <div class="flex flex-col gap-y-4">
+                <p class="text-sm md:text-base lg:text-lg"> <span class="font-bold">Adresse : </span></p>
+                <p class="text-sm md:text-base lg:text-lg"> <span class="font-bold">Téléphone : </span></p>
+                <p class="text-sm md:text-base lg:text-lg"> <span class="font-bold">Horaires d'ouverture : </span>
+                    <br />Du Lundi au Vendredi : de 10h à 18h
+                    <br />Samedi : de 9h30 à 19h
+                    <br />Dimanche : Fermé
+                </p>
+            </div>
+            <!-- </div> -->
+        </div>
+    </section> #}
+<!-- SECTION RECHERCHE MAGASIN -->
+{% endblock %}
+
