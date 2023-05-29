@@ -54,9 +54,9 @@
 	<div class="container mx-auto p-28 grid grid-cols-2 gap-12">
 		{% for categorie in categories %}
 			<div class="flex space-x-10">
-				<img class="h-[100px] min-w-[130px] w-[130px] md:h-[130px] md:min-w-[160px] md:w-[160px] xl:h-[150px] xl:min-w-[200px] xl:w-[200px]" src="{{ categorie.image }}" alt="{{ categorie.nom }}">
+				<img class="h-[100px] min-w-[130px] w-[130px] md:h-[130px] md:min-w-[160px] md:w-[160px] xl:h-[150px] xl:min-w-[200px] xl:w-[200px]" src="{{ asset('uploads/') ~ categorie.image}}" alt="{{ categorie.nom }}">
 				<div class="flex flex-col space-y-3">
-					<a href="category.php" class="text-lg md:text-xl xl:text-2xl uppercase text-orange font-semibold">{{ categorie.nom }}</a>
+					<a href="{{ path('app_produit', {'id': categorie.id} ) }}" class="text-lg md:text-xl xl:text-2xl uppercase text-orange font-semibold">{{ categorie.nom }}</a>
 					<hr class="border-darkgrey border-t-0 border-b-2 mb-32"/>
 					<p class="text-sm md:text-base xl:text-lg">{{ categorie.description }}</p>
 				</div>
