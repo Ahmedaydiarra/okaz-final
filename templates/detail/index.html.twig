@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DetailController!{% endblock %}
+
+{% block body %}
+<section class="mb-auto container mx-auto py-10 px-8 md:p-16 lg:p-20 xl:py-26 xl:px-48">
+<div class="lg:mb-10">
+        <div class="flex flex-col justify-center space-y-10 mb-10 md:mb-16">
+            <h2 class="text-center text-xl md:text-2xl md:leading-snug lg:text-3xl text-darkblue font-semibold uppercase"></h2>
+            {# <?php if (isset($error) && !empty($error["errorProduct_exist"])) { ?>
+                <p class="text-red-500 text-center text-xl"><?= $error["errorProduct_exist"] ?></p>
+            <?php }  ?> #}
+        </div>
+        <img class="h-[200px] w-[350px] md:h-[250px] md:w-[400px] xl:h-[300px] xl:w-[450px] block m-auto" src="{{ asset('uploads/') ~ produit.image}}" alt="{{ produit.nom }}">
+        <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 my-14" />
+        <!-- Description produit -->
+        <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 justify-between mb-16">
+            <div class="flex flex-col items-start lg:w-2/3">
+                <!-- Description -->
+                <p class="mb-10 text-base md:text-lg"><span class="font-bold text-lg md:text-xl mb-2">Description : </span><br />{{ produit.description }}</p>
+                <p class="text-base md:text-lg"> <span class="font-bold">Etat : </span>{{ produit.etat }}</p>
+                <p class="text-base md:text-lg"> <span class="font-bold">Dimensions : </span>{{ produit.dimensions }}</p>
+                <p class="text-base md:text-lg"> <span class="font-bold">Couleur : </span>{{ produit.couleur }}</p>
+            </div>
+            <p class="text-left text-orange text-2xl md:text-3xl font-bold">{{ produit.prix|number_format(2, '.', ',')}}€</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row space-y-0 lg:space-x-10 justify-center ">
+           <a  href="{{ path('app_voir', {'id': produit.id} ) }}" >
+                <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-2 px-6 mb-6 block m-auto">
+                    <button class="text-white text-center text-lg font-semibold tracking-wide">Ajouter au panier</button>
+                </div>
+             </a>
+            <a  href="" >
+                <div class=" bg-blue hover-bg-darkgrey w-fit rounded-full py-2 px-4 mb-14 block m-auto">
+                    <button  class="text-white text-center text-lg font-semibold tracking-wide">Acheter en magasin</button>
+                </div>
+            </a>
+        </div>
+        <hr class="block mx-auto border-darkgrey border-t-0 border-b-2 mb-10" />
+    </div>
+
+
+
+</section>
+{% endblock %}
