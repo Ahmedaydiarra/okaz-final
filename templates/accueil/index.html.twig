@@ -20,6 +20,7 @@
 
 
 <!-- FIN SECTION BANNIERE -->
+{# {{ dump(produits) }} #}
 
 <!-- SECTION NOS DERNIERS MEUBLES -->
 <section class="bg-white shadow-slate-400 shadow-md py-24 px-60">
@@ -36,11 +37,12 @@
                     <i class="fas fa-regular fa-angle-left fa-2x"></i>
                 </div>
             </a>
-            {% for produit in produits %}
-            <div class="slide w-[700px]">
-                <img class="w-full h-[400px] object-cover" src="{{ asset('uploads/') ~ produit.image}}">
-                <a href="#">
-                    <div class="w-full px-5 py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white">{{ produit.nom }}</div>
+            {# {{  dump(produit)}} #}
+            {% for adama in produit %}
+            <div class="slide md:w-[500px] sm:w-[400px] w-[220px]">
+                <img class="w-full md:h-[350px] sm:h-[250px] h-[120px]" src="{{ asset('uploads/') ~ adama.image}}">
+                <a href="{{ path('app_detail', {id: adama.id}) }}">
+                    <div class="text-xs sm:text-base w-full py-2 px-3 sm:px-5 sm:py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white">{{ adama.nom }}</div>
                 </a>
             </div>
             {% endfor %}

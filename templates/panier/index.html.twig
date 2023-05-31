@@ -91,19 +91,19 @@
                         </a>
                         <h3 class="font-normal text-base lg:text-lg xl:text-xl">{{cart.produit.dimensions }}</h3>
                         <h3 class="text-lg lg:text-xl xl:text-2xl">{{ cart.produit.prix|number_format(2, '.', ',')}}€ TTC</h3>
-                        <form action=>
+                        <a href="{{ path('app_supprimer', {id: cart.produit.id}) }}">
                             <button class="text-sm lg:text-base hover-text-orange underline">Retirer du panier</button>
-                        </form>
+                        </a>
                     </div>
                 </div>
             {% endfor %}
 
             <div class="flex flex-col justify-end space-y-4 md:space-y-6  mt-10 lg:mt-16">
-             <p class="text-center font-semibold text-xl md:text-2xl lg:text-3xl uppercase mb-10 md:mb-14 lg:mb-24 text-darkblue">Votre panier a  articles</p>
-                <h4 class="text-base md:text-xl lg:text-2xl uppercase text-center"> <span class="font-bold">Total : </span>€ TTC </h4>
-                <a href="shop.php" class="text-center uppercase text-base md:text-lg lg:text-xl font-semibold tracking-wider hover-text-orange">Continuer mes achats</a>
+             {# <p class="text-center font-semibold text-xl md:text-2xl lg:text-3xl uppercase mb-10 md:mb-14 lg:mb-24 text-darkblue">Votre panier a  articles</p> #}
+                <h4 class="text-base md:text-xl lg:text-2xl uppercase text-center"> <span class="font-bold">Total : </span>{{ total|number_format(2, '.', ',')}}€ TTC </h4>
+                <a href="{{ path('app_boutique') }}" class="text-center uppercase text-base md:text-lg lg:text-xl font-semibold tracking-wider hover-text-orange">Continuer mes achats</a>
                 <div class=" bg-orange hover-bg-darkgrey w-fit rounded-full py-1 px-4 xl:py-2 xl:px-6 block m-auto shadow-lg">
-                    <a href="delivery.php" class="font-semibold text-white text-base md:text-lg lg:text-xl tracking-wide">Valider le panier</a>
+                    <a href="{{ path('app_commande')}}" class="font-semibold text-white text-base md:text-lg lg:text-xl tracking-wide">Valider le panier</a>
                 </div>
             </div>
         

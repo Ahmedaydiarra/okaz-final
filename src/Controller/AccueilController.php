@@ -14,8 +14,9 @@ class AccueilController extends AbstractController
      */
     public function index(ProduitRepository $produitRepository): Response
     {
+        // dd($produitRepository->lastFive());
         return $this->render('accueil/index.html.twig', [
-            'produits' => '$produitRepository->lastFive' ,
+            'produit' => $produitRepository->lastFive() ,
         ]);
     }
 }
