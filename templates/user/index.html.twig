@@ -54,7 +54,7 @@
                         <li class="text-sm sm:text-base xl:text-lg"><p>{{user.email }}</p></li>          
                     </ul>
                     <div class="mb-2">
-                        <a href="" class=" py-1 px-1 md:py-2 md:px-8 border-[1px] border-black font-semibold text-sm  sm:text-base xl:text-lg">
+                        <a href="{{ path('app_user_edit', {'id': user.id}) }}" class=" py-1 px-1 md:py-2 md:px-8 border-[1px] border-black font-semibold text-sm  sm:text-base xl:text-lg">
                         <i class="fas fa-light text-sm xl:text-lg fa-pencil mr-1 md:mr-2"></i>Modifier
                         </a>
                    </div>
@@ -70,7 +70,7 @@
                         <li class="pl-6 lg:pl-12 text-sm xl:text-lg sm:mb-4 odd:"><p>********</p></li>          
                 </ul>
                 <div class="mb-3 block mx-auto lg:my-10">
-                    <a href="modify_password.php" class=" py-1 px-1 md:py-2 md:px-8 border-[1px] border-black font-semibold text-sm sm:text-base xl:text-lg">
+                    <a href="{{ path('app_forgot_password_request') }}" class=" py-1 px-1 md:py-2 md:px-8 border-[1px] border-black font-semibold text-sm sm:text-base xl:text-lg">
                     <i class="fas fa-light text-sm xl:text-lg fa-pencil mr-1 md:mr-2"></i>Modifier
                     </a>
                 </div>

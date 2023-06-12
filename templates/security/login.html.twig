@@ -25,6 +25,7 @@
     <label for="inputPassword" class="text-sm lg:text-lg block mb-2" for="email_login">Password<span class='text-red-600'> *</label>
     <input type="password"class="text-xs md:text-sm border rounded border-gray-200 py-2 px-4 w-full outline-slate-800 shadow-md" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
     </div>
+    <a class='mt-6 lg:mt-10' href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
 
     <p class='mt-6 lg:mt-10'><span class='text-sm lg:text-base text-red-600'>* </span> Champs obligatoires</p>
 
@@ -43,8 +44,8 @@
         </div>
     #}
     <div class="flex justify-center mt-10">
-    <button class="text-sm lg:text-base shadow-md rounded-full px-7 py-2 lg:px-10 bg-orange hover-bg-darkgrey text-white font-semibold uppercase tracking-wider" type="submit">
-        Sign in
+    <button class="text-sm lg:text-base shadow-md rounded-full px-7 py-2 lg:px-10 bg-orange hover-bg-darkgrey text-black font-semibold uppercase tracking-wider" type="submit">
+        Se connecter
     </button>
     </div>
 </form>

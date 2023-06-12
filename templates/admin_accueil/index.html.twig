@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} AdminAccueil{% endblock %}
+
+{% block body %}
+<section class="bg-grey shadow-slate-400 shadow-md py-14 px-10 sm:py-24 sm:px-20 xl:px-40">
+		<div class="container mx-auto flex flex-col items-center">
+			<h1 class="text-2xl md:text-4xl lg:text-5xl font-semibold text-center text-darkblue uppercase mb-5 sm:mb-10 ">Backoffice
+			</h1>
+			<p class="text-center text-black text-base md:text-xl">Ceci est la page Admin Accueil</p>
+		</div>
+	</section>
+<section id="mb-auto quiSommeNous" class="px-7 py-14 sm:px-10 sm:py-14 md:px-20 md:py-20 lg:py-16 lg:px-28 xl:px-36">
+ <div >
+        <h2>Bienvenue dans l'espace Back-office du site OKAZ</h2>
+        <p>En tant qu'administrateur, vous pouvez ajouter, modifier ou supprimer le contenu des catégories et des produits.</p>
+        <p>Pour commencer, selectionnez une action dans la barre de navigation ci-dessus.</p>
+    </div>
+</section>
+ <div class="container mx-auto flex justify-between items-center">
+ <ul class="list-none flex space-x-3 sm:space-x-6 justify-between items-center">
+                    <li>
+                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="{{ path('app_admin_categorie_index') }}" >Categorie</a>
+                    </li>
+                    <li>
+                        <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active:text-orange" href="{{ path('app_admin_produit_index') }}" >Produit</a>
+                    </li>
+</ul>
+ </div>
+{% endblock %}
+
+
+

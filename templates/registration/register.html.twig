@@ -28,15 +28,29 @@
 			</div>
 			<div class="mb-4 lg:mb-6">
 			{{ form_row(registrationForm.adresse) }}
+			 </div>
+			 <div class="flex flex-col md:flex-row md:space-y-0 md:space-x-6 lg:space-x-8 space-y-4 mb-4 lg:mb-6">
+			 <div class="md:w-1/2">
 			{{ form_row(registrationForm.code_postal) }}
+			</div>
+			<div class="md:w-1/2">
 			{{ form_row(registrationForm.ville) }}
-
+			</div>
+			</div>
+			<div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6  mb-4 lg:mb-6">
+			<div class="lg:w-1/2">
 			{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+			</div>
+			<div class="lg:w-1/2">
 			{{ form_row(registrationForm.RGPDContent) }}
-
-			<button type="submit" class="btn">Register</button>
+			</div>
+			</div>
+			
+			<div class="flex justify-center mt-10">
+			<button type="submit" class="text-sm lg:text-base shadow-md rounded-full px-7 py-2 lg:px-10 bg-orange hover-bg-darkgrey text-black font-semibold uppercase tracking-wider">Enregistrer</button>
+			</div>
 			{{ form_end(registrationForm) }}
 
 		</div>

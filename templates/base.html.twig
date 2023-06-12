@@ -22,22 +22,27 @@
 <script src="{{ asset('JS/index.js') }}"></script>
 </body> #}
 <div class="">
-        <header class="py-3 px-20 bg-darkblue">
+        <header class="py-2 px-4 sm:px-10 md:py-3 md:px-20 bg-darkblue">
             <div class="container flex mx-auto justify-between items-center">
                 <div class="flex place-items-center gap-3">
-                    <i class="fa-brands fa-facebook-f fa-lg" style="--fa-primary-color: white"></i>
-                    <i class="fa-brands fa-instagram fa-lg"></i>
-                    <i class="fa-brands fa-twitter fa-lg"></i>
-                </div>
-                {% if app.user %}
+                    <i class="fa-brands fa-facebook-f text-base sm:text-xl md:text-2xl" style="--fa-primary-color: white"></i>
+                    <i class="fa-brands fa-instagram text-base sm:text-xl md:text-2xl"></i>
+                    <i class="fa-brands fa-twitter text-base sm:text-xl md:text-2xl"></i>
+                </div> 
+                
                 <div class="flex justify-between items-center space-x-6 md:space-x-14">
                         <div class="flex items-center md:space-x-5 space-x-2">
-                        
-                                {# <a class="text-sm sm:text-base md:text-lg text-white hover-text-orange uppercase md:mr-5" href="">Back-Office</a> #}
-                            
-                        <a href="{{ path('app_user') }}">
+                        {% if is_granted('ROLE_ADMIN') %}
+                       
+                            <a class="text-sm sm:text-base md:text-lg text-white hover-text-orange uppercase md:mr-5" href="{{ path('app_admin_accueil') }}">Back-Office</a>
+
+                         {% endif %}
+                      
+                    {% if is_granted('ROLE_USER') %}
+                         <a href="{{ path('app_user') }}">
                                 <div class=" md:bg-orange-500 sm:py-0 sm:px-2 md:px-3 md:hover:bg-blue-500 rounded-2xl flex gap-3 place-items-center ">
                                     <i class="fa-solid fa-circle-user text-white text-base sm:text-xl md:text-2xl"></i>
+                                    
                                     <p class="sm:text-base md:text-lg text-white font-semibold hidden md:block">Mon compte</p>
                                 </div>
                             </a>
@@ -48,30 +53,36 @@
                                 <i class="place-self-center fa-solid fa-power-off text-base sm:text-xl md:text-2xl"></i>
                             </button>
                         </a>
+ 
+                     
+
+                            
+                       
                     </div>
-                    
-                    
-                {% else %} 
-                <div class="flex justify-between items-center gap-5">
+                     
+                   {% else %} 
+                 <div class="flex justify-between items-center gap-5">
                     <ul class="list-none flex gap-6 justify-between items-center">
                         <li>
-                            <a class="text-lg font-light text-white hover-text-orange" href="{{ path('app_login') }}" >
-                                <i class="fa-solid fa-arrow-right-to-bracket mr-3"></i>Connexion</a>
+                            <a class="sm:text-base md:text-lg text-white hover-text-orange" href="{{ path('app_login') }}" >
+                                <i class="fa-solid fa-arrow-right-to-bracket mr-3 text-base sm:text-xl md:text-2xl"></i>Connexion</a>
                         </li>
                         <li>
-                            <a id="signupLink" class="text-lg font-light text-white hover-text-orange" href="{{ path('app_register') }}" data-bs-toggle="modal">
-                                <i class="fa-solid fa-inbox mr-3"></i>Inscription</a>
+                            <a  class="sm:text-base md:text-lg text-white hover-text-orange" href="{{ path('app_register') }}" >
+                                <i class="fa-solid fa-inbox mr-3 text-base sm:text-xl md:text-2xl"></i>Inscription</a>
                         </li>
                     </ul>
                 </div> 
-                {% endif %} 
-            </div>
+                 {% endif %} 
+             </div>
         </header>
+
+        {# {{ asset('images/logo_okaz.png ')  }} ./i/#}
 
         <nav class="py-3 px-4 sm:py-4  sm:px-10 md:py-4 md:px-20 border-b-slate-400 border-2 bg-white ">
             <div class="container mx-auto flex justify-between items-center">
                 <a href="{{ path('app_accueil') }}">
-                    <img class="w-14 sm:w-16 md:w-20" src="./images/logo_okaz.png" alt="logo_okaz">
+                    <img class="w-14 sm:w-16 md:w-20" src="{{ asset('images/logo_okaz.png ')  }} " alt="logo_okaz">
                 </a>
                 <ul class="list-none flex space-x-3 sm:space-x-6 justify-between items-center">
                     <li>
@@ -96,28 +107,30 @@
  
 {% endblock %}
 
-<footer class="py-16 px-28 bg-darkblue">
-    <div class="container mx-auto flex justify-start  gap-x-28">
-        <ul class="text-white text-2xl  list-disc">
-            <li class="mb-4"><a  href="#">Politique de confidentialité</a></li>
-            <li class="mb-4"><a  href="#">CGU et CGV</a></li>
+<footer class="lg:py-16 lg:px-28 md:px-20 md:py-10 sm:px-14 sm:py-6 px-8 py-4 bg-darkblue inset-x-0 bottom-0">
+    <div class="container mx-auto flex justify-start space-x-8 sm:space-x-28">
+        <ul class="text-white text-sm sm:text-xl md:text-2xl list-disc">
+            <li class="mb-4"><a  href="{{ path('app_confidentialite') }}">Politique de confidentialité</a></li>
+            <li class="mb-4"><a  href="{{ path('app_cgu_cgv') }}">CGU et CGV</a></li>
             <li><a href="{{ path('app_siteplan') }}">Plan du site</a></li>
         </ul>
-        <ul class="text-white text-2xl  list-disc">
+        <ul class="text-white text-sm sm:text-xl md:text-2xl list-disc">
             <li class="mb-4"><a href="{{ path('app_foireauxquestions') }}">FAQ</a></li>
             <li><a href="">Nous contacter</a></li>
         </ul>
     </div>
+    
 </footer>
 <!-- Javascript -->
 
-<script src="{{ asset('JS/index.js') }}"></script>
+
 {# {% include "@CHCookieConsent/cookie_consent_styling.html.twig" %}
 
 {{ render_esi(path('ch_cookie_consent.show')) }}
 {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set')) }}
 {{ render_esi(path('ch_cookie_consent.show', { 'locale' : 'en' })) }}
 {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set', { 'locale' : app.request.locale })) }} #}
+<script src="{{ asset('JS/index.js') }}"></script>
 </body>
 
 </html>

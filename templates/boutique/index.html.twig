@@ -47,11 +47,12 @@
 	</form>
 
 </div>
-<hr class="block mx-auto  border-darkgrey border-t-0 border-b-2 mt-10"/></section><!-- </section> --><!-- Contenu de la page --><section class="p-20">
-<div class="container mx-auto grid gap-y-5">
-	<h2 class="uppercase text-darkblue font-semibold text-3xl text-center">Découvrez nos produits classés par catégories</h2>
+<hr class="block mx-auto  border-darkgrey border-t-0 border-b-2 mt-10"/>
+</section>
+<section class="mb-auto px-5 py-14 sm:px-20 lg:px-14">
+	<h2 class="uppercase text-darkblue font-semibold text-xl sm:text-2xl lg:text-3xl text-center mb-14">Découvrez nos produits classés par catégories</h2>
 
-	<div class="container mx-auto p-28 grid grid-cols-2 gap-12">
+	<div class="container mx-auto md:px-14 lg:px-0 lg:py-10 xl:py-20 xl:px-32 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 xl:gap-16">
 		{% for categorie in categories %}
 			<div class="flex space-x-10">
 				<img class="h-[100px] min-w-[130px] w-[130px] md:h-[130px] md:min-w-[160px] md:w-[160px] xl:h-[150px] xl:min-w-[200px] xl:w-[200px]" src="{{ asset('uploads/') ~ categorie.image}}" alt="{{ categorie.nom }}">
@@ -66,6 +67,6 @@
 
 	</div>
 
-</div>
+
 </section>
 {% endblock %}

@@ -45,7 +45,7 @@ class CommandeRepository extends ServiceEntityRepository
 //    public function findByExampleField($value): array
 //    {
 //        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
+//            ->andWhere('c.facture.id = :val')
 //            ->setParameter('val', $value)
 //            ->orderBy('c.id', 'ASC')
 //            ->setMaxResults(10)

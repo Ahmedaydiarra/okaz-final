@@ -1,110 +1,114 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}
+	Accueil
+{% endblock %}
 
 {% block body %}
 <!-- SECTION BANNIERE -->
-<section class="bg-black bg-opacity-40 bg-blend-darken bg-hero bg-no-repeat bg-cover bg-center bg-fixed py-40 px-80">
-    <div class="container mx-auto flex-col items-center ">
-        <h1 class="text-4xl text-center text-white font-semibold uppercase tracking-wider leading-10 mb-8">OKAZ, ACHAT ET VENTE DE MEUBLES D'OCCASION EN LIGNE ET EN MAGASIN </h1>
-        <div class="flex justify-center gap-5">
-            <div class=" bg-orange hover-bg-darkgrey rounded-full flex py-2 px-8">
-                <a href="{{ path('app_boutique') }}" class="text-white text-lg font-semibold tracking-wider">J'achète</a>
-            </div>
-            <div class=" bg-blue hover-bg-darkgrey rounded-full flex py-2 px-8">
-                <a href="{{ path('app_vendre') }}" class="text-white text-lg font-semibold tracking-wider">Je vends</a>
-            </div>
-        </div>
-    </div>
+<section class="bg-black bg-opacity-40 bg-blend-darken bg-hero beg-no-repeat bg-cover bg-center bg-fixed py-10 px-5 sm:py-16 sm:px-10 md:py-24 md:px-20 lg:py-32 lg:px-50 xl:py-44 xl:px-80">
+	<div class="container mx-auto flex-col items-center ">
+		<h1 class="text-xl sm:text-3xl md:text-4xl text-center text-white font-semibold uppercase tracking-wider  mb-8 leading-snug">OKAZ, ACHAT ET VENTE DE MEUBLES D'OCCASION EN LIGNE ET EN MAGASIN
+		</h1>
+		<div class="flex justify-center gap-5">
+			<div class="bg-orange hover-bg-darkgrey rounded-full flex py-1 px-3 sm:py-1 sm:px-4 md:py-1 md:px-5 lg:py-2 lg:px-8">
+				<a href="{{ path('app_boutique') }}" class="text-white text-sm sm:text-base md:text-lg font-semibold tracking-wider">J'achète</a>
+			</div>
+			<div class="bg-blue hover-bg-darkgrey rounded-full flex py-1 px-3 sm:py-1 sm:px-4 md:py-1 md:px-5 lg:py-2 lg:px-8">
+				<a href="{{ path('app_vendre') }}" class="text-white text-sm sm:text-base md:text-lg font-semibold tracking-wider">Je vends</a>
+			</div>
+		</div>
+	</div>
 </section>
 
 
 <!-- FIN SECTION BANNIERE -->
-{# {{ dump(produits) }} #}
+
 
 <!-- SECTION NOS DERNIERS MEUBLES -->
-<section class="bg-white shadow-slate-400 shadow-md py-24 px-60">
-    <div class="container mx-auto flex-col items-center ">
+<section class="bg-white shadow-slate-400 shadow-md py-7 px-5 sm:py-14 sm:px-10 md:py-20 md:px-12 lg:py-20 lg:px-40 xl:py-20 xl:px-60 ">
+	<div class="container mx-auto flex-col items-center ">
 
-        <h1 class="text-4xl text-center text-darkblue font-semibold uppercase mb-14 ">Nos derniers meubles d'occasions</h1>
+		<h1 class="text-xl sm:text-3xl md:text-4xl text-center text-darkblue font-semibold uppercase mb-8 sm:mb-14 sm:leading-snug ">Nos derniers meubles d'occasions</h1>
 
-        <!-- Implement the carousel -->
-        <div class=" flex  justify-between mx-auto items-center">
+		<!-- Implement the carousel -->
+		<div
+			class=" flex  justify-between mx-auto items-center space-x-3 sm:space-x-6">
 
-        <!-- Previous button -->
-            <a onclick="plusSlides(-1)">
-                <div class="rounded-full bg-orange hover-bg-darkgrey py-3 px-5">
-                    <i class="fas fa-regular fa-angle-left fa-2x"></i>
-                </div>
-            </a>
-            {# {{  dump(produit)}} #}
-            {% for adama in produit %}
-            <div class="slide md:w-[500px] sm:w-[400px] w-[220px]">
-                <img class="w-full md:h-[350px] sm:h-[250px] h-[120px]" src="{{ asset('uploads/') ~ adama.image}}">
-                <a href="{{ path('app_detail', {id: adama.id}) }}">
-                    <div class="text-xs sm:text-base w-full py-2 px-3 sm:px-5 sm:py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white">{{ adama.nom }}</div>
-                </a>
-            </div>
-            {% endfor %}
+			<!-- Previous button -->
+			<a onclick="plusSlides(-1)">
+				<div class="rounded-full bg-orange hover-bg-darkgrey px-2 py-0 sm:px-4 sm:py-2 md:px-5 md:py-3">
+					<i class="fas fa-regular fa-angle-left text-base sm:text-xl md:text-3xl"></i>
+				</div>
+			</a>
 
-            
+			{% for adama in produit %}
+				<div class="slide md:w-[500px] sm:w-[400px] w-[220px]">
+					<img class="w-full md:h-[350px] sm:h-[250px] h-[120px]" src="{{ asset('uploads/') ~ adama.image}}">
+					<a href="{{ path('app_detail', {id: adama.id}) }}">
+						<div class="text-xs sm:text-base w-full py-2 px-3 sm:px-5 sm:py-3 bg-zinc-600 hover:bg-zinc-800 text-center text-white">{{ adama.nom }}</div>
+					</a>
+				</div>
+			{% endfor %}
 
-            
 
-            <!-- Next button -->
-            <a onclick="plusSlides(1)">
-                <div class="rounded-full bg-blue hover-bg-darkgrey py-3 px-5">
-                    <i class="fas fa-regular fa-angle-right fa-2x"></i>
-                </div>
-            </a>
-        </div>
+			<!-- Next button -->
+			<a onclick="plusSlides(1)">
+				<div class="rounded-full bg-blue hover-bg-darkgrey px-2 py-0 sm:px-4 sm:py-2 md:px-5 md:py-3">
+					<i class="fas fa-regular fa-angle-right text-base sm:text-xl md:text-3xl"></i>
+				</div>
+			</a>
+		</div>
 
-        <br>
+		<br>
 
-        <!-- The dots -->
-        <div class="flex justify-center items-center space-x-5">
-            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(1)"></div>
-            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(2)"></div>
-            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(3)"></div>
-            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(4)"></div>
-            <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(5)"></div>
-        </div>
-    </div>
+		<!-- The dots -->
+		<div class="flex justify-center items-center space-x-5">
+			<div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(1)"></div>
+			<div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(2)"></div>
+			<div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(3)"></div>
+			<div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(4)"></div>
+			<div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(5)"></div>
+		</div>
+	</div>
 </section>
 
 <!-- FIN SECTION NOS DERNIERS MEUBLES -->
 
-<!-- SECTION QUI SOMMES-NOUS-->
 
-<section id="quiSommeNous" class="py-20 px-36 bg-orange">
-    <div class="container mx-auto text-white flex justify-between">
-        <div class="w-3/4 flex-col px-16">
-            <h1 class="text-4xl text-justify font-bold uppercase  mb-10"> QUI SOMMES-NOUS ? </h1>
-            <p class="text-xl tracking-wider  mb-10">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, reprehenderit pariatur? Dignissimos, voluptate eligendi rem pariatur repudiandae at, aliquid qui a, odit in ducimus illo suscipit praesentium id sed quod? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati dicta deleniti molestias.
-            </p>
-
-            <div>
-                <a href="#" class="py-3 px-8 rounded-full bg-blue hover-text-darkgrey text-white font-semibold text-lg">
-                <i class="fas fa-regular fa-eye mr-2"></i>En savoir plus
-                </a>
-            </div>
-        </div>
-
-        <div class="w-1/4">
-            <figure class="flex flex-col items-center mt-10">
-                <img src="./images/istockphoto-1194667952-612x612.jpg" alt="pdg_de_okaz" class="rounded-full w-60 mb-4">
-                <figcaption class="text-center font-semibold text-xl tracking-wider ">
-                    Ahmed Diarra </br> PDG de OKAZ
-                </figcaption>
-            </figure>
-        </div>
-    </div>
+ <section class="px-7 py-9 sm:px-10 sm:py-14 md:px-20 md:py-20 lg:py-20 lg:px-28 xl:py-20 xl:px-36 bg-orange"
+	<div class="container mx-auto text-white flex flex-col space-y-6 sm:space-y-8 md:space-y-10 lg:flex-row lg:space-y-0 justify-between  ">
+		<div class="lg:w-3/4 md:w-full flex-col xl:px-16">
+			<h1 class="text-2xl sm:text-3xl md:text-4xl text-justify font-bold uppercase mb-5 md:mb-10">
+				QUI SOMMES-NOUS ?
+			</h1>
+			<p class="sm:text-lg md:text-xl tracking-wider mb-6 md:mb-10">OKAZ est une entreprise créée en 2012, qui remet en circulation des articles d'ameublement. Un dépôt-vente dans lequel on peut acheter et vendre des meubles d'occasion.
+			</p>
+		</br>
+	</br>
+	Nous proposons un large choix de mobiliers : chaises, tables, lits, luminaires...
+</br>Vous pouvez acheter nos meubles d'occasion directement en ligne ou vous rendre dans l'un de nos nombreux magasins répartis sur toute la France.
+</p>
+{# <div>
+<a href="#" class="py-1 px-3 sm:py-1 sm:px-4 md:py-2 md:px-6 lg:py-3 lg:px-8 rounded-full bg-blue hover-bg-darkgrey text-white font-semibold text-sm sm:text-base md:text-lg">
+	<i class="fas fa-regular fa-eye mr-2 text-sm sm:text-base"></i>En savoir plus
+</a>
+</div> #}
+</div>
+<div class="lg:w-1/4 w-full">
+<figure class="flex lg:flex-col items-center mt-10 flex-row space-x-6">
+<img src="./images/istockphoto-1194667952-612x612.jpg" alt="pdg_de_okaz" class="rounded-full w-32 sm:w-40 lg:w-60 mb-4">
+<figcaption class="text-center font-semibold text-xl tracking-wider ">
+	Ahmed Diarra
+</br>
+PDG de OKAZ
+</figcaption>
+</figure>
+</div>
+</div>
 </section>
-
 <!-- FIN SECTION QUI SOMMES-NOUS-->
- <section id="" class="py-7 px-4 sm:py-10 sm:px-16 md:py-14 md:px-20 lg:py-28 lg:px-36 bg-eggshell ">
+<section id="" class="py-7 px-4 sm:py-10 sm:px-16 md:py-14 md:px-20 lg:py-28 lg:px-36 bg-eggshell ">
     <div class="flex flex-col items-center">
         <h1 class="text-xl sm:text-2xl md:text-4xl sm:leading-normal md:leading-snug font-semibold uppercase font-sans mb-8 md:mb-14 text-center " id="searchTitle"> Trouvez un magasin Okaz près de chez vous <i id="searchIcon" class="ml-4 fas fa-regular fa-magnifying-glass-location md:text-4xl"></i></h1>
         <form id="searchStoreForm" action="" method="POST" class="rounded-full w-2/3 border-2 border-orange px-1 py-1 sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-3 bg-white" data-bs-toggle="modal">
@@ -117,26 +121,4 @@
         </form>
     </div>
 </section>
-
-
-    {# <section id="store_searchModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-        <div class="relative container mx-auto top-28 w-3/4 lg:w-2/3 xl:w-1/2 p-5  md:p-8 xl:p-10 bg-white">
-            <button class="rounded py-0 px-1 md:px-2 bg-blue hover-bg-darkgrey float-right">
-                <i id="closeStore_searchModal" class="fa-solid fa-xmark text-lg lg:text-xl xl:text-2xl"></i>
-            </button>
-            <h3 class="text-orange text-center text-xl md:text-2xl lg:text-3xl font-semibold uppercase mb-6 md:mb-10 lg:mb-12">/h3>
-            <div class="flex flex-col gap-y-4">
-                <p class="text-sm md:text-base lg:text-lg"> <span class="font-bold">Adresse : </span></p>
-                <p class="text-sm md:text-base lg:text-lg"> <span class="font-bold">Téléphone : </span></p>
-                <p class="text-sm md:text-base lg:text-lg"> <span class="font-bold">Horaires d'ouverture : </span>
-                    <br />Du Lundi au Vendredi : de 10h à 18h
-                    <br />Samedi : de 9h30 à 19h
-                    <br />Dimanche : Fermé
-                </p>
-            </div>
-            <!-- </div> -->
-        </div>
-    </section> #}
-<!-- SECTION RECHERCHE MAGASIN -->
-{% endblock %}
-
+ {% endblock %}
