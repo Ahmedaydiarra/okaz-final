@@ -56,3 +56,4 @@ window.addEventListener("load",function() {
   showSlide(slideIndex);
   myTimer = setInterval(function(){plusSlides(1)}, 4000);
 })
+
