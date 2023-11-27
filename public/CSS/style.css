@@ -12,6 +12,30 @@
     background-image: url('../images/banner_hero.jpg'); 
 }
 
+#adama input {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+#adama textarea {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+#mina input {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+#banel input {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 100%; 
+}
+
+#banel textarea {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
 
 
 

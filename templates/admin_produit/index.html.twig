@@ -33,7 +33,7 @@
                 <td>{{ produit.couleur }}</td>
                 <td>{{ produit.prix }}</td>
                 <td>{{ produit.disponibilite }}</td>
-                <td>{{ produit.image }}</td>
+                <td><img class="w-full md:h-[350px] sm:h-[250px] h-[120px]" src="{{ asset('uploads/') ~ produit.image}}"></td>
                 <td>
                     <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="{{ path('app_admin_produit_show', {'id': produit.id}) }}">Voir</a>
                     <a class="text-sm sm:text-lg md:text-xl text-darkgrey hover-text-orange active-text-orange" href="{{ path('app_admin_produit_edit', {'id': produit.id}) }}">Modifier</a>
